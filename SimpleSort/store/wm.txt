@@ -1,0 +1,48 @@
+[{
+	"step": 1,
+	"action": "openAction",
+	"url": "http://vc.wumart.com/login"
+}, {
+	"step": 2,
+	"action": "inputAction",
+	"emlementLocation": "accountOrtelephone",
+	"emlementType": "id",
+	"inputPlaceholder": "userName"
+}, {
+	"step": 3,
+	"action": "inputAction",
+	"emlementLocation": "pwd",
+	"emlementType": "id",
+	"inputPlaceholder": "password"
+}, {
+	"step": 4,
+	"action": "clickAction",
+	"emlementLocation": "btnLogin",
+	"emlementType": "id"
+}, {
+	"step": 5,
+	"action": "sleepAction",
+	"time": 2000
+}, 
+ {
+	"step": 6,
+	"action": "CheckThrowExceptionAction",
+	"emlementLocation": "body > div.uc-banner > div.uc-wrap.pr > div.uc-login > div:nth-child(1)",
+	"checkType": "text_no_null",
+	"emlementType": "css"		
+},
+ 
+ {
+	"step": 7,
+	"action": "saveCookieAction",
+	"dataPlaceholder": "cookie"
+}, {
+	"step": 8,
+	"action": "apiAction",
+	"dataPlaceholder": "cookie",
+	"method": "post",
+	"url": "http://retail-work-menu.phoenix-t.xforceplus.com/api/v1/mspider/cookie/saveCookie"
+}, {
+	"step": 9,
+	"action": "exitAction"
+}]

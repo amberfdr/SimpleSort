@@ -1,0 +1,73 @@
+[{
+		"action": "definedAction",
+		"step": 0,
+		"key": ["userName", "password", "startTime", "inputendTime"]
+	}, {
+		"action": "openAction",
+		"step": 1,
+		"url": "http://b2b.chinalh.com/login/"
+	}, {
+		"emlementLocation": "#username",
+		"action": "inputAction",
+		"step": 3,
+		"emlementType": "css",
+		"inputPlaceholder": "userName"
+	}, {
+		"emlementLocation": "#password",
+		"action": "inputAction",
+		"step": 4,
+		"emlementType": "css",
+		"inputPlaceholder": "password"
+	}, {
+		"emlementLocation": "#checkCode",
+		"resultPlaceholder": "code",
+		"action": "identifyAction",
+		"step": 5,
+		"resultType": "textCode",
+		"emlementType": "css"
+	}, {
+		"action": "sleepAction",
+		"step": 6,
+		"time": 1000
+	}, {
+		"emlementLocation": "#checkText",
+		"action": "inputAction",
+		"step": 7,
+		"inputType": "code",
+		"emlementType": "css",
+		"inputPlaceholder": "code"
+	}, {
+		"emlementLocation": "#submit",
+		"action": "clickAction",
+		"step": 8,
+		"emlementType": "css"
+	}, {
+		"step": 9,
+		"action": "sleepAction",
+		"time": 3000
+	},
+
+	{
+		"step": 10,
+		"action": "CheckThrowExceptionAction",
+		"emlementLocation": "messageText",
+		"checkType": "innerhtml_no_null",
+		"emlementType": "id",
+		"isThrow": false
+	},
+
+	{
+		"step": 11,
+		"action": "saveCookieAction",
+		"dataPlaceholder": "cookie"
+	}, {
+		"step": 12,
+		"action": "apiAction",
+		"dataPlaceholder": "cookie",
+		"method": "post",
+		"url": "http://retail-work-menu.phoenix-t.xforceplus.com/api/v1/mspider/cookie/saveCookie"
+	}, {
+		"step": 12,
+		"action": "exitAction"
+	}
+]
