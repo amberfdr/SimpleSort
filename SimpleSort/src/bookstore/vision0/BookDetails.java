@@ -11,18 +11,18 @@ public class BookDetails implements Comparable{
     private String bookId = null;
     private String title = null;
     private String name = null;
-    private String description = null;
     private float price = 0.0F;
     private int year = 0;
+    private String description = null;
     private int saleAmount;
 
-    public BookDetails(String bookId, String title, String name, String description, float price, int year, int saleAmount) {
+    public BookDetails(String bookId, String title, String name, float price, int year, String description, int saleAmount) {
         this.bookId = bookId;
         this.title = title;
         this.name = name;
-        this.description = description;
         this.price = price;
         this.year = year;
+        this.description = description;
         this.saleAmount = saleAmount;
     }
 
